@@ -1,0 +1,7 @@
+[theme]
+base="light"
+primaryColor="blue"
+
+[theme.sidebar]
+backgroundColor="blue"
+secondaryBackgroundColor="#2a60ebff"
