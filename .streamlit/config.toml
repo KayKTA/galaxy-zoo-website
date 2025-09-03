@@ -1,7 +1,7 @@
 [theme]
 base="light"
-primaryColor="blue"
+primaryColor="rgba(124,58,237)"
 
 [theme.sidebar]
 backgroundColor="blue"
-secondaryBackgroundColor="#2a60ebff"
+secondaryBackgroundColor="rgba(124,58,237)"
