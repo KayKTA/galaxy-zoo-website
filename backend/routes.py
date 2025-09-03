@@ -25,7 +25,7 @@ def predict_category(uploaded_file, model_name):
             full_url,
             files=files,
             headers=headers,
-            timeout=60,  # Cloud Run peut être lent
+            timeout=60,
             allow_redirects=True
         )
 
@@ -37,7 +37,7 @@ def predict_category(uploaded_file, model_name):
 
     except requests.exceptions.ConnectionError as e:
         st.error(f"❌ Erreur de connexion vers {full_url}")
-        st.error(f"Votre API répond bien à la racine, vérifiez l'endpoint /{model_name}")
+        st.error(f"API répond bien à la racine, vérifiez l'endpoint /{model_name}")
         raise
     except Exception as e:
         st.error(f"❌ Erreur: {str(e)}")
