@@ -19,7 +19,7 @@ def predict_category(uploaded_file, model_name):
             'Accept': 'application/json',
         }
 
-        st.write(f"🔍 URL appelée: {full_url}")
+        # st.write(f"🔍 URL appelée: {full_url}")
 
         res = requests.post(
             full_url,
@@ -29,15 +29,14 @@ def predict_category(uploaded_file, model_name):
             allow_redirects=True
         )
 
-        st.write(f"✅ Status: {res.status_code}")
-        st.write(f"✅ Response headers: {dict(res.headers)}")
+        # st.write(f"✅ Status: {res.status_code}")
+        # st.write(f"✅ Response headers: {dict(res.headers)}")
 
         res.raise_for_status()
         return res.json()
 
     except requests.exceptions.ConnectionError as e:
         st.error(f"❌ Erreur de connexion vers {full_url}")
-        st.error(f"API répond bien à la racine, vérifiez l'endpoint /{model_name}")
         raise
     except Exception as e:
         st.error(f"❌ Erreur: {str(e)}")
