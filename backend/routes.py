@@ -1,6 +1,6 @@
 import requests
 import streamlit as st
-from .config import API_URL
+API_URL = st.secrets["API_URL"]
 
 def predict_category(uploaded_file, model_name):
     print(f"in predict {model_name}")
