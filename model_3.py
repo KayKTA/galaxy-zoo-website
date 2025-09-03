@@ -4,6 +4,13 @@ from utils.ui import inject_css
 inject_css()
 
 st.header("🔭 Modèle VGG16")
-img = st.file_uploader("Upload une image de galaxie", type=["png","jpg","jpeg"])
-if img:
-    st.image(img, use_container_width=False)
+
+uploaded = st.file_uploader("Upload une galaxie", type=["png","jpg","jpeg"])
+if uploaded:
+    st.image(uploaded, use_container_width=False)
+
+    if st.button("Classifier"):
+        with st.spinner("Analyse en cours..."):
+            result = predict_category(uploaded, "predictVGG")
+        # st.success(f"Résultat : {result['predicted_class']}")
+        st.success(f"Résultat : {result['predicted_class']} ({result['probability']:.2%})")
