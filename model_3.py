@@ -3,7 +3,7 @@ from backend.routes import predict_category
 from utils.ui import inject_css
 inject_css()
 
-st.header("🔭 Modèle VGG16")
+st.header("🔭 Modèle VGG16 3 Classes")
 
 uploaded = st.file_uploader("Upload une galaxie", type=["png","jpg","jpeg"])
 if uploaded:
