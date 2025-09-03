@@ -4,7 +4,7 @@ from utils.ui import inject_css
 inject_css()
 
 
-st.header("🔭 Modèle 100 Neurones")
+st.header("🔭 Modèle CNN 7 Classes")
 # uploaded_file = st.file_uploader("Upload une image de galaxie", type=["png","jpg","jpeg"])
 # if uploaded_file:
 #     st.image(uploaded_file, use_container_width=False)
@@ -15,10 +15,10 @@ st.header("🔭 Modèle 100 Neurones")
 
 uploaded = st.file_uploader("Upload une galaxie", type=["png","jpg","jpeg"])
 if uploaded:
-    st.image(uploaded, use_container_width=True)
+    st.image(uploaded, use_container_width=False)
 
-    if st.button("Prédire"):
+    if st.button("Classifier"):
         with st.spinner("Analyse en cours..."):
-            result = predict_category(uploaded)
-        st.success(f"Résultat : {result['predicted_class']}")
-        # st.success(f"Résultat : {result['prediction']} ({result['probability']:.2%})")
+            result = predict_category(uploaded, "predict6")
+        # st.success(f"Résultat : {result['predicted_class']}")
+        st.success(f"Résultat : {result['predicted_class']} ({result['probability']:.2%})")
