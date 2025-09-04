@@ -9,10 +9,10 @@ pages = {
         st.Page("home.py", title="Accueil", icon="🏠"),
     ],
     "🪐 Modèles": [
-        st.Page("model_1.py", title="Model CNN 3", icon="🌞"),
-        st.Page("model_2.py", title="Model CNN 7", icon="🚀"),
-        st.Page("model_3.py", title="Model VGG16 3", icon="🌌"),
-        st.Page("model_4.py", title="Model VGG16 7", icon="☄️"),
+        st.Page("model_1.py", title="Classification 3 Catégories", icon="🚀"),
+        st.Page("model_3.py", title="Classification 7 Catégories", icon="☄️"),
+        # st.Page("model_2.py", title="Model CNN 7", icon=""),
+        # st.Page("model_4.py", title="Model VGG16 7", icon=""),
     ],
 }
 
