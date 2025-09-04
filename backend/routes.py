@@ -29,9 +29,6 @@ def predict_category(uploaded_file, model_name):
             allow_redirects=True
         )
 
-        # st.write(f"✅ Status: {res.status_code}")
-        # st.write(f"✅ Response headers: {dict(res.headers)}")
-
         res.raise_for_status()
         return res.json()
 
