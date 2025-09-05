@@ -7,23 +7,23 @@ def inject_css(path: str = "static/styles.css"):
     css = Path(path).read_text()
     st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
-def show_result(model_label, pred_class, proba):
+def show_result(model_label, pred_class, proba, bckg = '#7C3AED22'):
     st.markdown(f"""
     <div style="
-        background: #7C3AED22;
+        background: {bckg};
         padding: 1.5rem;
         border-radius: 16px;
         text-align: center;
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         font-family: 'Inter', sans-serif;">
         <h2 style="color:#7C3AED; margin:0; font-size:1.8rem;">
-            {model_label}
+            {model_label}:
         </h2>
-        <p style="font-size:1.3rem; margin-top:.5rem;">
-            <b>{pred_class}</b> <br>
-            <span style="font-size:1.1rem; color:#10B981;">
+        <p style="font-size:1.4rem; margin-top:.5rem;">
+            <b>{pred_class}</b> <hr>
+            <b style="font-size:1.5rem; color:green;">
                 Confiance : {proba:.2%}
-            </span>
+            </b>
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -50,6 +50,7 @@ def two_col_layout( model_name: str, model_name2: str, model_label: str, model_l
                     model_label2,
                     result2["predicted_class"],
                     result2["probability"],
+                    bckg='#2D97EB45'
                 )
 
     with col_right:

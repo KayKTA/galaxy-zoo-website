@@ -22,6 +22,6 @@ st.markdown(
 two_col_layout(
     model_name="predictCNN",
     model_name2="predictVGG",
-    model_label="Modèle CNN",
-    model_label2="Modèle VGG16"
+    model_label="CNN Simple",
+    model_label2="VGG16"
 )
